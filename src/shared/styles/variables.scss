@@ -1,23 +1,40 @@
-$white-main: #fafafa;
-$white-secondary: #f2eeeb;
+$BG-Main: #121111;
+$BG-Dop: #24211F;
 
-$secondary-brown-32: #9b5e33;
-$secondary-brown-16: #805639;
-$secondary-green: #4b9b33;
-$secondary-red: #9b3633;
-$secondary-yellow: #9b9833;
+$Seccond-Main: #2E2B28;
+$Seccond-Main-Text: #E0D5CA;
+$Seccond-Dop-Text: #ABA39B;
+$Seccond-Hover: #332E2B;
+$Seccond-Active: #38322E;
+$Seccond-Border: #3D3936;
+$Seccond-Disabled: #66615C;
 
-$accent-main: #db7125;
+$accent-Main: #D97D21;
+
+$Animate-Diration: 0.2s ease;
+
+$Border-Radius: 13px;
+$Border-Width: 1.2px;
+
+$Padding-X: 124px;
+$Container-Width: calc(1440px - ($Padding-X * 2));
 
 @mixin Literata($Weight: 400) {
     font-family: 'Literata';
     font-weight: $Weight;
     font-style: normal;
 }
-
-$Container-max: 1440px;
-$Container-padding: 124px;
-$Container-width: calc($Container-max - ($Container-padding * 2));
-
-$Padding-y: 112px;
-$Padding-x: 124px;
+@mixin input {
+    background-color: $Seccond-Main;
+    border-radius: $Border-Radius;
+    border-width: $Border-Width;
+    padding-inline: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+@mixin list {
+    background-color: $Seccond-Main;
+    border-radius: $Border-Radius;
+    border-width: $Border-Width;
+    padding-left: 8px;
+}
