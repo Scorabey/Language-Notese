@@ -1,0 +1,36 @@
+@use '../shared/styles/main.scss' as *;
+@use '../shared/styles/variables.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include Literata;
+    background-color: $BG-Main;
+    color: $Seccond-Dop-Text;
+}
+h1,h2,h3 {
+    @include Literata;
+    color: $Seccond-Main-Text;
+}
+h4,h5,h6,a,p,span,label,input {
+    @include Literata(500);
+    color: $Seccond-Main-Text;
+}
+::placeholder {
+    @include Literata(500);
+    color: $Seccond-Placeholder;
+    width: clamp(14px, 0.97vw, 8px);
+}
+input {
+    border: none;
+}

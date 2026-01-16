@@ -1,0 +1,58 @@
+@use '../../shared/styles/variables.scss' as *;
+@use '../../shared/styles/main.scss';
+
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 16px;
+    padding: 32px 48px;
+    margin: 0 auto;
+    margin-top: 112px;
+    max-width: $Container-Width;
+    background-color: $BG-Dop;
+    border-radius: 13px;
+    border: 1.2px solid $Seccond-Border;
+}
+.frame {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .frame__title {
+        font-size: clamp(48px, 3.33vw, 24px);
+    }
+
+    .frame__labelInput {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        label {
+            font-size: 24px;
+        }
+        input {
+            display: flex;
+            width: 238px;
+            height: 40px;
+            box-sizing: border-box;
+            background-color: $Seccond-Main;
+            border-radius: $Border-Radius;
+            border: 1.2px solid $Seccond-Border;
+            padding: 12px 8px;
+            transition: all $Transition-Darution $Transition-Mode;
+        }
+        input:hover {
+            border: 1.2px solid $Seccond-Hover;
+        }
+        input:focus {
+            outline: none;
+            border: 1.2px solid $Seccond-Active;
+        }
+    }
+}
+.logo {
+    position: absolute;
+    right: 48px;
+}

@@ -1,10 +1,11 @@
-import './styles/main.scss'
+import Note from '../widgets'
+import './global.scss'
 
 function App() {
 
   return (
     <>
-    <h1>Language Notise</h1>
+    <Note/>
     </>
   )
 }

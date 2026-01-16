@@ -8,16 +8,18 @@ $Seccond-Hover: #332E2B;
 $Seccond-Active: #38322E;
 $Seccond-Border: #3D3936;
 $Seccond-Disabled: #66615C;
+$Seccond-Placeholder: #595550;
 
 $accent-Main: #D97D21;
 
-$Animate-Diration: 0.2s ease;
+$Transition-Darution: 0.2s;
+$Transition-Mode: ease;
 
 $Border-Radius: 13px;
 $Border-Width: 1.2px;
 
 $Padding-X: 124px;
-$Container-Width: calc(1440px - ($Padding-X * 2));
+$Container-Width: 1192px;
 
 @mixin Literata($Weight: 400) {
     font-family: 'Literata';
