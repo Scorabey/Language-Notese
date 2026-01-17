@@ -29,7 +29,7 @@ $Container-Width: 1192px;
 @mixin input {
     background-color: $Seccond-Main;
     border-radius: $Border-Radius;
-    border-width: $Border-Width;
+    border: 1.2px solid $Seccond-Border;
     padding-inline: 8px;
     padding-top: 12px;
     padding-bottom: 12px;

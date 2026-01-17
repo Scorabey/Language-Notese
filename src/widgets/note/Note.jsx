@@ -12,7 +12,7 @@ function Note() {
                 </div>
             </div>
             <div className="logo">
-                <svg width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_17_623)">
                     <rect width="190" height="190" fill="#24211F" />
                     <path d="M37.8433 14.4915H67.5551H97.2669H126.979H144.806C150.748 14.4915 156.691 20.434 156.691 26.3761V115.512L156.394 115.809C153.422 114.621 150.451 115.512 148.074 118.186L142.132 124.128L115.094 151.166H8.13147V26.3761C8.13147 20.4336 14.074 14.4915 20.0161 14.4915H25.9586H37.8433ZM43.7858 26.3761C43.7858 23.1077 41.1117 20.4336 37.8433 20.4336C34.5749 20.4336 31.9008 23.1077 31.9008 26.3761C31.9008 29.6446 34.5749 32.3186 37.8433 32.3186C41.1117 32.3186 43.7858 29.6446 43.7858 26.3761ZM103.209 26.3761C103.209 23.1077 100.535 20.4336 97.2669 20.4336C93.9985 20.4336 91.3244 23.1077 91.3244 26.3761C91.3244 29.6446 93.9988 32.3186 97.2673 32.3186C100.536 32.3186 103.209 29.6446 103.209 26.3761ZM73.4976 26.3761C73.4976 23.1077 70.8235 20.4336 67.5551 20.4336C64.2867 20.4336 61.6126 23.1077 61.6126 26.3761C61.6126 29.6446 64.2867 32.3186 67.5551 32.3186C70.8235 32.3186 73.4976 29.6446 73.4976 26.3761ZM132.922 26.3761C132.922 23.1077 130.248 20.4336 126.979 20.4336C123.711 20.4336 121.037 23.1077 121.037 26.3761C121.037 29.6446 123.711 32.3186 126.979 32.3186C130.248 32.3186 132.922 29.6446 132.922 26.3761ZM109.152 163.051V174.936H20.0161C14.0736 174.936 8.13147 168.993 8.13147 163.051H109.152ZM115.094 151.166L112.123 154.137L109.152 157.109V163.051H8.13147V151.166H115.094Z" fill="#E0D5CA" />
@@ -27,6 +27,29 @@ function Note() {
                     </clipPath>
                 </defs>
                 </svg>
+            </div>
+            <div className="table">
+                <div className="table__search-frame">
+                    <label className='table__label' htmlFor="search1">Your original word!</label>
+                    <input className='table__search' type="text" id='search1' placeholder='Search...' />
+                </div>
+                <div className="table__search-frame">
+                    <label className='table__label' htmlFor="search2">Your translate word!</label>
+                    <input className='table__search' type="text" id='search2' placeholder='Search...' />
+                </div>
+                <div className="table__search-frame">
+                    <label className='table__label' htmlFor="search3">Your tags!</label>
+                    <input className='table__search' type="text" id='search3' placeholder='Search...' />
+                </div>
+                <div className="wrapper">
+                    <div className="wrapper__item wrapper__item-original"><span>Your word!</span></div>
+                </div>
+                <div className="wrapper">
+                    <div className="wrapper__item wrapper__item-translate"><span>Your word!</span></div>
+                </div>
+                <div className="wrapper">
+                    <div className="wrapper__item wrapper__item-tag"><span>Your word!</span></div>
+                </div>
             </div>
         </div>
     )

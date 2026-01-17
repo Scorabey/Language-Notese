@@ -4,7 +4,7 @@
 .container {
     display: flex;
     position: relative;
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
     padding: 32px 48px;
     margin: 0 auto;
@@ -55,4 +55,69 @@
 .logo {
     position: absolute;
     right: 48px;
+
+    svg {
+        max-width: clamp(190px, 13.19vw, 190px);
+        height: clamp(190px, 13.19vw, 190px);
+    }
+}
+.table {
+    display: grid;
+    max-width: 100%;
+    gap: 6px 6px;
+    background-color: $BG-Dop;
+    padding: 26px 12px;
+    border: 1.2px solid $Seccond-Border;
+    border-radius: $Border-Radius;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 8fr;
+
+    .table__search-frame {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        border: 1.2px solid $Seccond-Border;
+        border-radius: $Border-Radius;
+        padding: 12px 8px;
+
+        .table__label {
+            display: flex;
+            justify-content: center;
+            font-size: clamp(16px, 1.11vw, 12px);
+            transition: all $Transition-Darution $Transition-Mode;
+        }
+        .table__search {
+            @include input
+        }
+        .table__search:hover {
+            border: 1.2px solid $Seccond-Hover;
+        }
+        .table__search:focus {
+            outline: none;
+            border: 1.2px solid $Seccond-Active;
+        }
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 8px;
+        overflow: hidden;
+        border: 1.2px solid $Seccond-Border;
+        border-radius: 13px;
+
+        .wrapper__item {
+            display: flex;
+            flex-direction: row;
+            padding-left: 8px;
+            align-items: center;
+            border: 1.2px solid $Seccond-Border;
+            border-radius: 13px 3px 3px 13px;
+            height: 45px;
+
+            span {
+                font-size: clamp(16px, 1.11vw, 12px);
+            }
+        }
+    }
 }
