@@ -1,0 +1,11 @@
+@use '../../styles/variables.scss' as *;
+
+.logo {
+    position: absolute;
+    right: 48px;
+
+    svg {
+        max-width: clamp(190px, 13.19vw, 190px);
+        height: clamp(190px, 13.19vw, 190px);
+    }
+}

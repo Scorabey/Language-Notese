@@ -1,0 +1,48 @@
+@use '../../styles/variables.scss' as *;
+
+.wrapper__item {
+    display: flex;
+    flex-direction: row;
+    padding-left: 8px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1.2px solid $Seccond-Border;
+    border-radius: 13px 3px 3px 13px;
+    height: 45px;
+
+    span {
+        font-size: clamp(16px, 1.11vw, 12px);
+    }
+
+    .wrapper__item-frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        .item__rename {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: clamp(44px, 3.06vw, 36px);
+            height: 43px;
+
+            svg {
+                max-width: clamp(32px, 2.22vw, 24px);
+                height: 32px;
+            }
+        }
+        .item__delete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: clamp(44px, 3.06vw, 36px);
+            height: 43px;
+
+            svg {
+                max-width: clamp(32px, 2.22vw, 24px);
+                height: 32px;
+            }
+        }
+    }
+}

@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+*::selection {
+    background-color: $accent-Main;
+}
 html,
 body {
     height: 100%;
@@ -34,3 +37,19 @@ h4,h5,h6,a,p,span,label,input {
 input {
     border: none;
 }
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $BG-Dop;
+    padding: 10px 10px;
+    border-radius: 3px;
+    border: none;
+    transition: all $Transition-Darution $Transition-Mode;
+}
+button:hover {
+    background-color: $accent-Main;
+}
+button:active {
+    scale: 0.95;
+} // Заглушка

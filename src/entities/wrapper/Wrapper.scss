@@ -1,0 +1,11 @@
+@use '../../shared/styles/variables.scss' as *;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 8px;
+    overflow: hidden;
+    border: 1.2px solid $Seccond-Border;
+    border-radius: 13px;
+}
