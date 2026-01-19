@@ -3,14 +3,29 @@ import './Search.scss'
 function Search(props) {
     const {
         title,
-        type
+        type,
+        onSearchInput,
     } = props
 
     return (
-        <div className="table__search-frame">
-            <label className='table__label' htmlFor="search">{title}</label>
-            <input className='table__search' type={type} id='search' placeholder='Search...' />
-        </div>
+        <form 
+        className="table__search-frame"
+        onSubmit={(event) => event.preventDefault()}
+        >
+            <label 
+            className='table__label' 
+            htmlFor="search"
+            >
+                {title}
+            </label>
+            <input 
+            className='table__search'
+            type={type} 
+            id='search' 
+            placeholder='Search...' 
+            onInput={(event) => onSearchInput(event.target.value)}
+            />
+        </form>
     )
 }
 

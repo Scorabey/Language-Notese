@@ -1,16 +1,22 @@
+import Add from '../button/add/Add'
 import './Input.scss'
 
 function Input(props) {
+
     const {
         title,
         placeholder,
-        id
+        id,
     } = props
+
+    const addItem = () => {
+        console.log('Add note')
+    }
 
     return (
         <div className="frame__labelInput">
             <label htmlFor={id}>{title}</label>
-            <input type="text" id={id} placeholder={placeholder} />
+            <Add id={id} placeholder={placeholder} addItem={addItem} />
         </div>
     )
 }

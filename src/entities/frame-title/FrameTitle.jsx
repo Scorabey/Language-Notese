@@ -8,8 +8,16 @@ function FrameTitle(props) {
 
     return (
         <div className="frame">
-            <h1 className='frame__title'>{title}</h1>
-            <Input title='Input new note' placeholder='Write new note...' id='create' />
+            <h1 
+            className='frame__title'
+            >
+                {title}
+            </h1>
+            <Input 
+            title='Input new note' 
+            placeholder='Write new note...' 
+            id='create' 
+            />
         </div>
     )
 }

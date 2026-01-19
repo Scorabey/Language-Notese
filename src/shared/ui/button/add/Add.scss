@@ -1,0 +1,16 @@
+@use '@/shared/styles/variables.scss' as *;
+.frame__input {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    .frame__add {
+        display: flex;
+        box-sizing: border-box;
+        width: 45px;
+        height: 45px;
+
+        span {
+            font-size: 18px;
+        }
+    }
+}

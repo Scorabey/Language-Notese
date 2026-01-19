@@ -3,7 +3,7 @@ import './Wrapper.scss';
 
 function Wrapper() {
     const Words = [
-        {Word: 'Aplication', Translate: 'Приложение', Tag: '#software'}
+        {id: '', Word: 'Aplication', Translate: 'Приложение', Tag: '#software'}
     ]
 
     return (
