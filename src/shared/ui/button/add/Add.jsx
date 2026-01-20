@@ -2,9 +2,11 @@ import './Add.scss';
 
 function Add(props) {
     const {
-        addItem,
         placeholder,
-        id
+        id,
+        value,
+        onChange,
+        addItem
     } = props
 
     const onSubmit = (event) => {
@@ -18,11 +20,12 @@ function Add(props) {
             type="text" 
             id={id} 
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
             />
             <button 
             className="frame__add"
             type='submit'
-            onSubmit={onSubmit}
             >
                 <span>Add</span>
             </button>

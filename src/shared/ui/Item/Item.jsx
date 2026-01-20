@@ -4,16 +4,25 @@ import './Item.scss'
 
 function Item(props) {
     const {
-        hidden,
+        isHidden,
         title,
+        deleteNote,
+        toggle,
+        isActive
     } = props
 
     return (
     <div className="wrapper__item wrapper__item-original">
          <span>{title}</span>
         <div className="wrapper__item-frame">
-            <Rename />
-            <Delete hidden={hidden} />
+            <Rename
+            toggle={toggle}
+            isActive={isActive}
+            />
+            <Delete 
+            isHidden={isHidden}
+            deleteNote={deleteNote}
+            />
         </div>
     </div>
     )

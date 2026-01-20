@@ -2,9 +2,18 @@ import Search from '@/shared/ui/search/Search'
 import Wrapper from '../wrapper/Wrapper'
 import './Table.scss'
 
-function Table() {
-    const filteredTasks = (query) => {
-        console.log(`Поиск: ${query}`)
+function Table(props) {
+    const {
+        notes,
+        deleteNote,
+        isActive,
+        toggle,
+        activeEdit,
+        toggleRename
+    } = props
+
+    const filteredTasks = (name) => (query) => {
+        console.log(`Search on ${name}: ${query}`)
     }
 
     return (
@@ -12,19 +21,26 @@ function Table() {
             <Search 
             type='search' 
             title='Your original word!'
-            onSearchInput={filteredTasks}
+            onSearchInput={filteredTasks('Original')}
             />
             <Search 
             type='search' 
             title='Your translate word!'
-            onSearchInput={filteredTasks}
+            onSearchInput={filteredTasks('Translate')}
             />
             <Search 
             type='search' 
             title='Your tag!'
-            onSearchInput={filteredTasks}
+            onSearchInput={filteredTasks('Tag')}
             />
-            <Wrapper />
+            <Wrapper
+            deleteNote={deleteNote}
+            notes={notes}
+            isActive={isActive}
+            activeEdit={activeEdit}
+            toggle={toggle}
+            toggleRename={toggleRename}
+            />
         </div>
     )
 }

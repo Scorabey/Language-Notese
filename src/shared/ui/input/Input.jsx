@@ -7,16 +7,21 @@ function Input(props) {
         title,
         placeholder,
         id,
+        value,
+        setNewNoteTitle,
+        addItem
     } = props
-
-    const addItem = () => {
-        console.log('Add note')
-    }
 
     return (
         <div className="frame__labelInput">
             <label htmlFor={id}>{title}</label>
-            <Add id={id} placeholder={placeholder} addItem={addItem} />
+            <Add 
+            id={id} 
+            placeholder={placeholder}
+            value={value}
+            onChange={(event) => setNewNoteTitle(event.target.value)}
+            addItem={addItem}
+            />
         </div>
     )
 }
