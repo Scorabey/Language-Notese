@@ -3,25 +3,15 @@
 .table__search-frame {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
     border: 1.2px solid $Seccond-Border;
     border-radius: $Border-Radius;
     padding: 12px 8px;
 
-    .table__search-label {
+    .table__label {
         display: flex;
         justify-content: center;
-        font-size: clamp(24px, 1.67vw, 16px);
+        font-size: clamp(32px, 2.22vw, 12px);
         transition: all $Transition-Darution $Transition-Mode;
-    }
-    .table__search {
-        @include input
-    }
-    .table__search:hover {
-        border: 1.2px solid $Seccond-Hover;
-    }
-    .table__search:focus {
-        outline: none;
-        border: 1.2px solid $Seccond-Active;
     }
 }

@@ -14,6 +14,20 @@
         font-size: clamp(16px, 1.11vw, 12px);
     }
 
+    input {
+        display: flex;
+        width: 238px;
+        height: 35px;
+        box-sizing: border-box;
+        background-color: transparent;
+        border-radius: $Border-Radius;
+        padding: 12px 8px;
+        transition: all $Transition-Darution $Transition-Mode;
+    }
+    input:focus {
+        outline: none;
+    }
+
     .wrapper__item-frame {
         display: flex;
         justify-content: center;

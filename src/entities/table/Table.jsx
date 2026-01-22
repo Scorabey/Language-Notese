@@ -1,4 +1,5 @@
 import Search from '@/shared/ui/search/Search'
+import Label from '../../shared/ui/label/Label'
 import Wrapper from '../wrapper/Wrapper'
 import './Table.scss'
 
@@ -9,30 +10,23 @@ function Table(props) {
         isActive,
         toggle,
         activeEdit,
-        toggleRename
+        toggleRename,
+        updateNote,
+        setSearchQuery,
+        searchQuery,
+        filteredNotes
     } = props
-
-    const filteredTasks = (name) => (query) => {
-        console.log(`Search on ${name}: ${query}`)
-    }
 
     return (
         <div className="table">
-            <Search 
-            type='search' 
-            title='Your original word!'
-            onSearchInput={filteredTasks('Original')}
-            />
+            <Label title='Your original word!' />
             <Search 
             type='search' 
             title='Your translate word!'
-            onSearchInput={filteredTasks('Translate')}
+            setSearchQuery={setSearchQuery}
+            searchQuery={searchQuery}
             />
-            <Search 
-            type='search' 
-            title='Your tag!'
-            onSearchInput={filteredTasks('Tag')}
-            />
+            <Label title='Your tag!' />
             <Wrapper
             deleteNote={deleteNote}
             notes={notes}
@@ -40,6 +34,8 @@ function Table(props) {
             activeEdit={activeEdit}
             toggle={toggle}
             toggleRename={toggleRename}
+            updateNote={updateNote}
+            filteredNotes={filteredNotes}
             />
         </div>
     )

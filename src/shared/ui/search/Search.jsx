@@ -4,7 +4,8 @@ function Search(props) {
     const {
         title,
         type,
-        onSearchInput,
+        searchQuery,
+        setSearchQuery
     } = props
 
     return (
@@ -13,7 +14,7 @@ function Search(props) {
         onSubmit={(event) => event.preventDefault()}
         >
             <label 
-            className='table__label' 
+            className='table__search-label' 
             htmlFor="search"
             >
                 {title}
@@ -22,8 +23,9 @@ function Search(props) {
             className='table__search'
             type={type} 
             id='search' 
-            placeholder='Search...' 
-            onInput={(event) => onSearchInput(event.target.value)}
+            placeholder='Search...'
+            value={searchQuery}
+            onInput={(event) => setSearchQuery(event.target.value)}
             />
         </form>
     )

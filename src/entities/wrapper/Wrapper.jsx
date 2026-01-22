@@ -1,4 +1,8 @@
 import Item from '@/shared/ui/Item/Item';
+import { useState } from 'react';
+import 'swiper/css';
+import { Controller } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import './Wrapper.scss';
 
 function Wrapper(props) {
@@ -6,53 +10,113 @@ function Wrapper(props) {
         notes,
         deleteNote,
         toggleRename,
-        activeEdit
+        activeEdit,
+        updateNote,
+        filteredNotes
     } = props
+
+    const [swiper1, setSwiper1] = useState(null);
+    const [swiper2, setSwiper2] = useState(null);
+    const [swiper3, setSwiper3] = useState(null);
 
     return (
         <>
-        <div className="wrapper">
-            {notes.map(word => (
-                <Item 
-                key={word.id} 
-                title={word.Word}
-                deleteNote={() => deleteNote(word.id)}
-                toggle={() => toggleRename(word.id, 'original')}
-                isActive={
-                    activeEdit.id === word.id &&
-                    activeEdit.field === 'original'
-                }
-                />
-            ))}
+        <div className='wrapper'>
+            <Swiper
+            modules={[Controller]}
+            onSwiper={setSwiper1}
+            controller={{ control: swiper2 }}
+            className='swiper-wrapper'
+            direction='vertical'
+            slidesPerView="auto"
+            spaceBetween={8}
+            >
+                {(filteredNotes ?? notes).map(note => (
+                <SwiperSlide
+                className='swiper-item'
+                key={note.id}
+                >
+                    <Item 
+                    deleteNote={() => deleteNote(note.id)}
+                    toggle={() => toggleRename(note.id, 'Original')}
+                    isActive={
+                        activeEdit.id === note.id &&
+                        activeEdit.field === 'Original'
+                    }
+                    updateNote={updateNote}
+                    field='Word'
+                    id={note.id}
+                    value={note.Word}
+                    title={note.Word ? note.Word : 'Word'}
+                    />
+                </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
         <div className="wrapper">
-            {notes.map(word => (
-                <Item 
-                key={word.id} 
-                isHidden={true} 
-                title={word.Translate}
-                deleteNote={() => deleteNote(word.id)}
-                toggle={() => toggleRename(word.id, 'translate')}
-                isActive={
-                    activeEdit.id === word.id &&
-                    activeEdit.field === 'translate'
-                }
-                />
+            <Swiper
+            modules={[Controller]}
+            onSwiper={setSwiper2}
+            controller={{ control: swiper1 }}
+            className='swiper-wrapper'
+            direction='vertical'
+            slidesPerView="auto"
+            spaceBetween={8}
+            >
+                {(filteredNotes ?? notes).map(note => (
+                    <SwiperSlide
+                    className='swiper-item'
+                    key={note.id}
+                    >
+                        <Item 
+                        isHidden={true} 
+                        deleteNote={() => deleteNote(note.id)}
+                        toggle={() => toggleRename(note.id, 'Translate')}
+                        isActive={
+                            activeEdit.id === note.id &&
+                            activeEdit.field === 'Translate'
+                        }
+                        updateNote={updateNote}
+                        field='Translate'
+                        id={note.id}
+                        value={note.Translate}
+                        title={note.Translate ? note.Translate : 'Translate your word'}
+                        />
+                    </SwiperSlide>
             ))}
+            </Swiper>
         </div>
         <div className="wrapper">
-            {notes.map(word => (
-                <Item 
-                key={word.id} 
-                title={word.Tag}
-                deleteNote={() => deleteNote(word.id)}
-                toggle={() => toggleRename(word.id, 'tag')}
-                isActive={
-                    activeEdit.id === word.id &&
-                    activeEdit.field === 'tag'
-                }
-                />
-            ))}
+            <Swiper
+            modules={[Controller]}
+            onSwiper={setSwiper3}
+            controller={{ control: swiper1 }}
+            className='swiper-wrapper'
+            direction='vertical'
+            slidesPerView="auto"
+            spaceBetween={8}
+            >
+                {(filteredNotes ?? notes).map(note => (
+                    <SwiperSlide
+                    className='swiper-item'
+                    key={note.id} 
+                    >
+                        <Item 
+                        deleteNote={() => deleteNote(note.id)}
+                        toggle={() => toggleRename(note.id, 'Tag')}
+                        isActive={
+                            activeEdit.id === note.id &&
+                            activeEdit.field === 'Tag'
+                        }
+                        updateNote={updateNote}
+                        field='Tag'
+                        id={note.id}
+                        value={note.Tag}
+                        title={note.Tag ? note.Tag : 'New tag'}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
         </>
     )

@@ -18,7 +18,7 @@ function Add(props) {
         <form className='frame__input' onSubmit={onSubmit}>
             <input
             type="text" 
-            id={id} 
+            id={id}
             placeholder={placeholder}
             value={value}
             onChange={onChange}
@@ -27,7 +27,7 @@ function Add(props) {
             className="frame__add"
             type='submit'
             >
-                <span>Add</span>
+                <span>ADD</span>
             </button>
         </form>
     )

@@ -8,12 +8,34 @@ function Item(props) {
         title,
         deleteNote,
         toggle,
-        isActive
+        isActive,
+        id,
+        field,
+        value,
+        updateNote,
     } = props
 
+    const onSubmit = (event) => {
+        event.preventDefault()
+    }
+
     return (
-    <div className="wrapper__item wrapper__item-original">
-         <span>{title}</span>
+    <form
+    className="wrapper__item wrapper__item-original"
+    onSubmit={onSubmit}
+    >
+         {isActive
+        ? <input
+        value={value}
+        type='text'
+        id='rename'
+        placeholder='Rename...'
+        autoFocus
+        onChange={(event) => updateNote(id, field, event.target.value)}
+        >
+
+        </input>
+        : <span onDoubleClick={toggle}>{value ?? title}</span>}
         <div className="wrapper__item-frame">
             <Rename
             toggle={toggle}
@@ -24,7 +46,7 @@ function Item(props) {
             deleteNote={deleteNote}
             />
         </div>
-    </div>
+    </form>
     )
 }
 
