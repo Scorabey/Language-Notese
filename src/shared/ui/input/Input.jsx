@@ -7,8 +7,7 @@ function Input(props) {
         title,
         placeholder,
         id,
-        value,
-        setNewNoteTitle,
+        newNotesInputRef,
         addItem
     } = props
 
@@ -18,8 +17,7 @@ function Input(props) {
             <Add 
             id={id} 
             placeholder={placeholder}
-            value={value}
-            onChange={(event) => setNewNoteTitle(event.target.value)}
+            ref={newNotesInputRef}
             addItem={addItem}
             />
         </div>

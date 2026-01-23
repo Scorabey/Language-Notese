@@ -1,7 +1,7 @@
 import FrameTitle from '@/entities/frame-title/FrameTitle';
 import Table from '@/entities/table/Table';
 import Logo from '@/shared/ui/logo/Logo';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Note.scss';
 
 function Note() {
@@ -18,7 +18,7 @@ function Note() {
     ]
     })
 
-    const [newNoteTitle, setNewNoteTitle] = useState('')
+    const newNotesInputRef = useRef(null)
 
     const [isActive, setIsActive] = useState(false)
 
@@ -32,6 +32,10 @@ function Note() {
     useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
     }, [notes])
+
+    useEffect(() => {
+        newNotesInputRef.current.focus()
+    }, [])
     const toggleRename = (id, field) => {
         setActiveEdit(prev => 
             prev.id === id && prev.field === field 
@@ -43,6 +47,8 @@ function Note() {
         setIsActive(prev => !prev)
     }
     const addItem = () => {
+        const newNoteTitle = newNotesInputRef.current.value
+
         if(newNoteTitle.trim().length > 0) {
             const newNote = {
                 id: crypto?.randomUUID() ?? Date.now().toString(),
@@ -51,7 +57,9 @@ function Note() {
                 Tag: null
             }
             setNotes([...notes, newNote])
-            setNewNoteTitle('')
+            newNotesInputRef.current.value = ''
+            setSearchQuery('')
+            newNotesInputRef.current.focus()
         }
     }
     const deleteNote = (noteId) => {
@@ -84,9 +92,8 @@ function Note() {
     return (
         <div className='container'>
             <FrameTitle 
-            title='Your notes!' 
-            newNoteTitle={newNoteTitle}
-            setNewNoteTitle={setNewNoteTitle}
+            title='Your notes!'
+            newNotesInputRef={newNotesInputRef}
             addItem={addItem}
             />
             <Logo />

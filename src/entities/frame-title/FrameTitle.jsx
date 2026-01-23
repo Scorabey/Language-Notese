@@ -4,8 +4,7 @@ import './FrameTitle.scss'
 function FrameTitle(props) {
     const {
         title,
-        newNoteTitle,
-        setNewNoteTitle,
+        newNotesInputRef,
         addItem
     } = props
 
@@ -20,8 +19,7 @@ function FrameTitle(props) {
             title='Input new note' 
             placeholder='Write new note...' 
             id='create'
-            value={newNoteTitle}
-            setNewNoteTitle={setNewNoteTitle}
+            newNotesInputRef={newNotesInputRef}
             addItem={addItem}
             />
         </div>

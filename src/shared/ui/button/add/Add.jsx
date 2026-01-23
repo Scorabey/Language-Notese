@@ -6,7 +6,8 @@ function Add(props) {
         id,
         value,
         onChange,
-        addItem
+        addItem,
+        ref
     } = props
 
     const onSubmit = (event) => {
@@ -22,6 +23,7 @@ function Add(props) {
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            ref={ref}
             />
             <button 
             className="frame__add"
