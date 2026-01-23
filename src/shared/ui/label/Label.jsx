@@ -6,17 +6,9 @@ function Label(props) {
     } = props
 
     return (
-        <form
-            className="table__search-frame"
-            onSubmit={(event) => event.preventDefault()}
-            >
-            <label 
-            className='table__label' 
-            htmlFor="search"
-            >
-                {title}
-            </label>
-        </form>
+        <div className="table__search-frame">
+            <h3 className='table__title'>{title}</h3>
+        </div>
     )
 }
 

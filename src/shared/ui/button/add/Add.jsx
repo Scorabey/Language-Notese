@@ -26,6 +26,7 @@ function Add(props) {
             ref={ref}
             />
             <button 
+            title='Add new note'
             className="frame__add"
             type='submit'
             >

@@ -26,6 +26,7 @@ function Item(props) {
     >
          {isActive
         ? <input
+        title='Input new title note'
         value={value}
         type='text'
         id='rename'

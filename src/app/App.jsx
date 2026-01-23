@@ -5,6 +5,7 @@ function App() {
 
   return (
     <>
+    <h1 className='visually-hidden'>Language Notese</h1>
     <Note/>
     </>
   )

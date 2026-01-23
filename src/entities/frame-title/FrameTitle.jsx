@@ -10,11 +10,11 @@ function FrameTitle(props) {
 
     return (
         <div className="frame">
-            <h1 
+            <h2
             className='frame__title'
             >
                 {title}
-            </h1>
+            </h2>
             <Input 
             title='Input new note' 
             placeholder='Write new note...' 

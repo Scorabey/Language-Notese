@@ -7,6 +7,7 @@ function Rename(props) {
     } = props
     return (
         <button 
+        title='Rename note'
         className="item__rename"
         onClick={toggle}
         >

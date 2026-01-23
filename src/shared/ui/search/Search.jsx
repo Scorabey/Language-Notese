@@ -15,14 +15,14 @@ function Search(props) {
         >
             <label 
             className='table__search-label' 
-            htmlFor="search"
+            htmlFor="Search"
             >
                 {title}
             </label>
-            <input 
+            <input
             className='table__search'
             type={type} 
-            id='search' 
+            id='Search' 
             placeholder='Search...'
             value={searchQuery}
             onInput={(event) => setSearchQuery(event.target.value)}

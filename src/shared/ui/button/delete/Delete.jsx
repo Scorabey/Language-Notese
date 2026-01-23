@@ -8,6 +8,7 @@ function Delete(props) {
 
     return (
         <button
+        title='Delete note'
         className={`item__delete ${isHidden ? 'hidden' : ''}`}
         onClick={deleteNote}
         >
