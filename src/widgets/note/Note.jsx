@@ -1,10 +1,10 @@
-import FrameTitle from '@/entities/frame-title/FrameTitle';
-import Table from '@/entities/table/Table';
-import Logo from '@/shared/ui/logo/Logo';
-import { useEffect, useRef, useState } from 'react';
+import { FrameTitle } from '@/entities/frame-title';
+import { Table } from '@/entities/table';
+import { Logo } from '@/shared/ui/logo';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './Note.scss';
 
-function Note() {
+export const Note = () => {
     const [notes, setNotes] = useState(() => {
         const savedNotes = localStorage.getItem('notes')
 
@@ -43,35 +43,37 @@ function Note() {
             : {id, field}
         )
     }
-    const toggle = () => {
+    const toggle = useCallback(() => {
         setIsActive(prev => !prev)
-    }
-    const addItem = () => {
-        const newNoteTitle = newNotesInputRef.current.value
+    }, [])
+    const addItem = useCallback(() => {
+        const value = newNotesInputRef.current.value
+        if(!value.trim().length > 0) return
 
-        if(newNoteTitle.trim().length > 0) {
-            const newNote = {
+        setNotes(prev => [
+            ...prev,
+            {
                 id: crypto?.randomUUID() ?? Date.now().toString(),
-                Word: newNoteTitle,
+                Word: value,
                 Translate: null,
                 Tag: null
             }
-            setNotes([...notes, newNote])
-            newNotesInputRef.current.value = ''
-            setSearchQuery('')
-            newNotesInputRef.current.focus()
-        }
-    }
-    const deleteNote = (noteId) => {
+        ])
+
+        newNotesInputRef.current.value = ''
+        setSearchQuery('')
+        newNotesInputRef.current.focus()
+    }, [])  
+    const deleteNote = useCallback((noteId) => {
         const isConfirmed = confirm('Are you sure delete this note?')
 
         if(isConfirmed) {
-            setNotes(
-                notes.filter((note) => note.id !== noteId)
+            setNotes(prevNotes => 
+                prevNotes.filter((note) => note.id !== noteId)
             )
         }
-    }
-    const updateNote = (id, field, value) => {
+    }, [])
+    const updateNote = useCallback((id, field, value) => {
         setNotes(prev => 
             prev.map(note => 
                 note.id === id
@@ -79,15 +81,18 @@ function Note() {
                 : note
             )
         )
-    }
+    }, [])
     const clearSearchQuery = searchQuery.trim().toLowerCase()
-    const filteredNotes = clearSearchQuery.length > 0
-        ? notes.filter(note => 
-            (note.Word && note.Word.toLowerCase().includes(clearSearchQuery)) ||
-            (note.Translate && note.Translate.toLowerCase().includes(clearSearchQuery)) ||
-            (note.Tag && note.Tag.toLowerCase().includes(clearSearchQuery))
-        )
-        : notes
+
+    const filteredNotes = useMemo(() => {
+        if(!clearSearchQuery) return notes
+
+        return notes.filter(note => 
+                        (note.Word && note.Word.toLowerCase().includes(clearSearchQuery)) ||
+                        (note.Translate && note.Translate.toLowerCase().includes(clearSearchQuery)) ||
+                        (note.Tag && note.Tag.toLowerCase().includes(clearSearchQuery))
+                    )
+    }, [notes, clearSearchQuery])
 
     return (
         <div className='container'>

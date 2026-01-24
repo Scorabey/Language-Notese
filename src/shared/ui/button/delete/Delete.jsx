@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import './Delete.scss'
 
-function Delete(props) {
+export const Delete = (props) => {
     const {
         isHidden,
         deleteNote
@@ -19,4 +20,4 @@ function Delete(props) {
     )
 }
 
-export default Delete
+export default memo(Delete)

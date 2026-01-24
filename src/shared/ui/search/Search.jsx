@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import './Search.scss'
 
-function Search(props) {
+export const Search = (props) => {
     const {
         title,
         type,
@@ -31,4 +32,4 @@ function Search(props) {
     )
 }
 
-export default Search
+export default memo(Search)

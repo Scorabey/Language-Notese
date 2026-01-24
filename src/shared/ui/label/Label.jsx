@@ -1,6 +1,6 @@
 import './Label.scss'
 
-function Label(props) {
+export const Label = (props) => {
     const {
         title
     } = props

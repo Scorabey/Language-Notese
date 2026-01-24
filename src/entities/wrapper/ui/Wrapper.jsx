@@ -1,11 +1,11 @@
-import Item from '@/shared/ui/Item/Item';
+import { Item } from '@/shared/ui/Item/Item';
 import { useState } from 'react';
 import 'swiper/css';
 import { Controller } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Wrapper.scss';
 
-function Wrapper(props) {
+export const Wrapper = (props) => {
     const {
         notes,
         deleteNote,

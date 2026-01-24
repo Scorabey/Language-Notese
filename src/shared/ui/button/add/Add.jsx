@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import './Add.scss';
 
-function Add(props) {
+export const Add = (props) => {
     const {
         placeholder,
         id,
@@ -36,4 +37,4 @@ function Add(props) {
     )
 }
 
-export default Add
+export default memo(Add)

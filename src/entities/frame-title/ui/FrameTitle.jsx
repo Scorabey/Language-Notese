@@ -1,7 +1,8 @@
-import Input from '@/shared/ui/input/Input'
+import { Input } from '@/shared/ui/input'
+import { memo } from 'react'
 import './FrameTitle.scss'
 
-function FrameTitle(props) {
+export const FrameTitle = (props) => {
     const {
         title,
         newNotesInputRef,
@@ -15,7 +16,7 @@ function FrameTitle(props) {
             >
                 {title}
             </h2>
-            <Input 
+            <Input
             title='Input new note' 
             placeholder='Write new note...' 
             id='create'
@@ -26,4 +27,4 @@ function FrameTitle(props) {
     )
 }
 
-export default FrameTitle
+export default memo(FrameTitle)

@@ -1,8 +1,9 @@
-import Delete from '../button/delete/Delete'
-import Rename from '../button/rename/Rename'
+import { Delete } from '@/shared/ui/button/delete'
+import { Rename } from '@/shared/ui/button/rename'
+import { memo } from 'react'
 import './Item.scss'
 
-function Item(props) {
+export const Item = (props) => {
     const {
         isHidden,
         title,
@@ -51,4 +52,4 @@ function Item(props) {
     )
 }
 
-export default Item
+export default memo(Item)

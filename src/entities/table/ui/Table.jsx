@@ -1,9 +1,10 @@
-import Search from '@/shared/ui/search/Search'
-import Label from '../../shared/ui/label/Label'
-import Wrapper from '../wrapper/Wrapper'
+import { Wrapper } from '@/entities/wrapper'
+import { Label } from '@/shared/ui/label'
+import { Search } from '@/shared/ui/search'
+import { memo } from 'react'
 import './Table.scss'
 
-function Table(props) {
+export const Table = (props) => {
     const {
         notes,
         deleteNote,
@@ -41,4 +42,4 @@ function Table(props) {
     )
 }
 
-export default Table
+export default memo(Table)

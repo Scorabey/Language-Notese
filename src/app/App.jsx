@@ -1,7 +1,7 @@
 import Note from '@/widgets'
 import './global.scss'
 
-function App() {
+export const App = () => {
 
   return (
     <>

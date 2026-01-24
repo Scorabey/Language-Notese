@@ -1,7 +1,8 @@
-import Add from '../button/add/Add'
+import { Add } from '@/shared/ui/button/add'
+import { memo } from 'react'
 import './Input.scss'
 
-function Input(props) {
+export const Input = (props) => {
 
     const {
         title,
@@ -24,4 +25,4 @@ function Input(props) {
     )
 }
 
-export default Input
+export default memo(Input)

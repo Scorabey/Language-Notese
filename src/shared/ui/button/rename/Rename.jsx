@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import './Rename.scss'
 
-function Rename(props) {
+export const Rename = (props) => {
     const {
         isActive,
         toggle
@@ -23,4 +24,4 @@ function Rename(props) {
     )
 }
 
-export default Rename
+export default memo(Rename)
