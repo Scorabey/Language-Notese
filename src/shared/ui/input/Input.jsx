@@ -1,6 +1,6 @@
 import { NotesContext } from '@/shared/model/context/NotesContext'
 import { Add } from '@/shared/ui/button/add'
-import { memo, useContext } from 'react'
+import { memo, useContext, useState } from 'react'
 import './Input.scss'
 
 export const Input = (props) => {
@@ -14,6 +14,8 @@ export const Input = (props) => {
         newNoteWord,
     } = useContext(NotesContext)
 
+    const [error, setError] = useState('')
+
     const emptyNote = newNoteWord.trim()
     const isNoteEmpty = emptyNote.length === 0;
 
@@ -25,6 +27,8 @@ export const Input = (props) => {
             placeholder={placeholder}
             isDisabled={isNoteEmpty}
             emptyNote={emptyNote}
+            error={error}
+            setError={setError}
             />
         </div>
     )

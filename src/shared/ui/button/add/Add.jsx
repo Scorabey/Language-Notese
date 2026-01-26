@@ -7,7 +7,9 @@ export const Add = (props) => {
         placeholder,
         id,
         isDisabled,
-        emptyNote
+        emptyNote,
+        error,
+        setError
     } = props
 
     const {
@@ -22,16 +24,29 @@ export const Add = (props) => {
         addItem(emptyNote)
     }
 
+    const onInput = (event) => {
+        const value = event.target.value
+        const clearValue = value.trim()
+        const hasOnlySpaces = value.length > 0 && clearValue.length === 0
+
+        setNewNoteWord(value)
+        setError(hasOnlySpaces ? 'The task cannot be empty' : '')
+    }
+
     return (
         <form className='frame__input' onSubmit={onSubmit}>
             <input
+            className={`${error ? 'is-invalid' : ''}`}
             type="text" 
             id={id}
             placeholder={placeholder}
             value={newNoteWord}
-            onChange={(e) => setNewNoteWord(e.target.value)}
+            onChange={onInput}
             ref={newNotesInputRef}
             />
+            {error && (
+                <span className='frame__error'>{error}</span>
+            )}
             <button 
             title='Add new note'
             className="frame__add"

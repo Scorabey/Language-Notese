@@ -29,6 +29,10 @@ export const Wrapper = () => {
     return (
         <>
         <div className='wrapper'>
+            {notes.length === 0 ? (
+                <span className='is-Empty'>Empty list</span>
+            ) 
+            : (
             <Swiper
             modules={[Controller]}
             onSwiper={setSwiper1}
@@ -50,13 +54,18 @@ export const Wrapper = () => {
                     field='Word'
                     id={note.id}
                     value={note.Word}
-                    title={note.Word ? note.Word : 'Word'}
+                    title={!note.Word === '' ? note.Word : 'New word'}
                     />
                 </SwiperSlide>
                 ))}
             </Swiper>
+            )}
         </div>
         <div className="wrapper">
+            {notes.length === 0 ? (
+                <span className='is-Empty'>Empty list</span>
+            ) 
+            : (
             <Swiper
             modules={[Controller]}
             onSwiper={setSwiper2}
@@ -79,13 +88,18 @@ export const Wrapper = () => {
                         field='Translate'
                         id={note.id}
                         value={note.Translate}
-                        title={note.Translate ? note.Translate : 'Translate your word'}
+                        title={!note.Translate === '' ? note.Translate : 'Translate your word'}
                         />
                     </SwiperSlide>
             ))}
             </Swiper>
+            )}
         </div>
         <div className="wrapper">
+            {notes.length === 0 ? (
+                <span className='is-Empty'>Empty list</span>
+            ) 
+            : (
             <Swiper
             modules={[Controller]}
             onSwiper={setSwiper3}
@@ -107,11 +121,12 @@ export const Wrapper = () => {
                         field='Tag'
                         id={note.id}
                         value={note.Tag}
-                        title={note.Tag ? note.Tag : 'New tag'}
+                        title={!note.Tag === '' ? note.Tag : 'New tag'}
                         />
                     </SwiperSlide>
                 ))}
             </Swiper>
+            )}
         </div>
         </>
     )
