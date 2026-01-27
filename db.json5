@@ -1,0 +1,6 @@
+{
+    notes: [
+        {id: 'note-1', Word: 'Aplication', Translate: 'Приложение', Tag: '#software'},
+        {id: 'note-2', Word: 'Network', Translate: 'Соединение', Tag: '#network'}
+    ]
+}

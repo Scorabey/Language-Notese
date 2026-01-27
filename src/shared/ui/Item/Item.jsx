@@ -43,7 +43,7 @@ export const Item = (props) => {
         </input>
         : <span 
         onDoubleClick={toggle}
-        >{value === '' ? title : value}</span>}
+        >{value.trim() === '' ? title : value}</span>}
         <div className="wrapper__item-frame">
             <Rename
             toggle={toggle}

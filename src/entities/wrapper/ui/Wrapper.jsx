@@ -54,7 +54,7 @@ export const Wrapper = () => {
                     field='Word'
                     id={note.id}
                     value={note.Word}
-                    title={!note.Word === '' ? note.Word : 'New word'}
+                    title={!note.Word.trim() === '' ? note.Word : 'New word'}
                     />
                 </SwiperSlide>
                 ))}
@@ -88,7 +88,7 @@ export const Wrapper = () => {
                         field='Translate'
                         id={note.id}
                         value={note.Translate}
-                        title={!note.Translate === '' ? note.Translate : 'Translate your word'}
+                        title={!note.Translate.trim() === '' ? note.Translate : 'Translate your word'}
                         />
                     </SwiperSlide>
             ))}
@@ -121,7 +121,7 @@ export const Wrapper = () => {
                         field='Tag'
                         id={note.id}
                         value={note.Tag}
-                        title={!note.Tag === '' ? note.Tag : 'New tag'}
+                        title={!note.Tag.trim() === '' ? note.Tag : 'New tag'}
                         />
                     </SwiperSlide>
                 ))}

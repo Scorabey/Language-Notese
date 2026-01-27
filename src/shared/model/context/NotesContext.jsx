@@ -1,6 +1,5 @@
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-
 export const NotesContext = createContext({})
 
 export const NotesProvider = (props) => {
@@ -57,8 +56,8 @@ export const NotesProvider = (props) => {
             {
                 id: crypto?.randomUUID() ?? Date.now().toString(),
                 Word: newNoteWord,
-                Translate: null,
-                Tag: null
+                Translate: '',
+                Tag: ''
             }
         ])
 
