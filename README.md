@@ -22,6 +22,7 @@ The app allows users to quickly add new words, organize them into categories, an
 ## Features 
 
 -Add, edit and delete notes
+
 -Search notes
 
 ## Installation and Running
