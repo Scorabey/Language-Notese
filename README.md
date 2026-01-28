@@ -7,6 +7,11 @@ The app allows users to quickly add new words, organize them into categories, an
 
 ## Technologies
 
+
+![Main Page]()
+![search Note]()
+![Rename Note]()
+
 -React
 
 -React context API
