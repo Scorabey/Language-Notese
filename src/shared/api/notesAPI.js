@@ -9,6 +9,11 @@ const noteApi = {
     return fetch(URL).then((response) => response.json())
   },
 
+  getById: (id) => {
+    return fetch(`${URL}/${id}`)
+      .then((response) => response.json())
+  },
+
   Add: (note) => {
     return fetch(URL, {
       method: 'POST',

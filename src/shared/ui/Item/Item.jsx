@@ -3,6 +3,7 @@ import { Delete } from '@/shared/ui/button/delete'
 import { Rename } from '@/shared/ui/button/rename'
 import { memo, useContext } from 'react'
 import './Item.scss'
+import RouterLink from '@/pages/RouterLink'
 
 export const Item = (props) => {
   const { deleteNote, isHidden, title, id, field, value, toggle, isActive } =
@@ -27,9 +28,11 @@ export const Item = (props) => {
           onChange={(event) => updateNote(id, field, event.target.value)}
         ></input>
       ) : (
-        <span onDoubleClick={toggle}>
-          {value.trim() === '' ? title : value}
-        </span>
+        <RouterLink to={`/notes/${id}`} aria-label='Note details page'>
+          <span onDoubleClick={toggle}>
+            {value.trim() === '' ? title : value}
+          </span>
+        </RouterLink>
       )}
       <div className="wrapper__item-frame">
         <Rename toggle={toggle} isActive={isActive} />
