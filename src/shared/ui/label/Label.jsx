@@ -1,11 +1,11 @@
-import './Label.scss'
+import styles from './Label.module.scss'
 
 export const Label = (props) => {
   const { title } = props
 
   return (
-    <div className="table__search-frame">
-      <h3 className="table__title">{title}</h3>
+    <div className={styles.tableSearchLabel}>
+      <h3 className={styles.tableTitle}>{title}</h3>
     </div>
   )
 }

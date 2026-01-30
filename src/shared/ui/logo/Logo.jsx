@@ -1,8 +1,8 @@
-import './Logo.scss'
+import styles from './Logo.module.scss'
 
 export const Logo = () => {
   return (
-    <div className="logo">
+    <div className={styles.logo}>
       <svg viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_17_623)">
           <rect width="190" height="190" fill="#24211F" />

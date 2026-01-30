@@ -1,6 +1,6 @@
 import { NotesContext } from '@/shared/model/context/NotesContext'
 import { memo, useContext } from 'react'
-import './Search.scss'
+import styles from './Search.module.scss'
 
 export const Search = (props) => {
   const { title, type } = props
@@ -9,14 +9,14 @@ export const Search = (props) => {
 
   return (
     <form
-      className="table__search-frame"
+      className={styles.tableSearchFrame}
       onSubmit={(event) => event.preventDefault()}
     >
-      <label className="table__search-label" htmlFor="Search">
+      <label className={styles.tableSearchLabel} htmlFor="Search">
         {title}
       </label>
       <input
-        className="table__search"
+        className={styles.tableSearch}
         type={type}
         id="Search"
         placeholder="Search note"

@@ -1,12 +1,12 @@
 @use '@/shared/styles/variables.scss' as *;
 
-.frame__input {
+.frameInput {
   display: flex;
   position: relative;
   flex-direction: row;
   gap: 8px;
 
-  .frame__add {
+  .frameAdd {
     display: flex;
     box-sizing: border-box;
     width: 60px;
@@ -17,12 +17,12 @@
     }
   }
 
-  .frame__add:disabled {
+  .frameAdd:disabled {
     background-color: $Seccond-Disabled;
     cursor: not-allowed;
   }
 
-  .frame__error {
+  .frameError {
     position: absolute;
     bottom: -15px;
     left: 10px;

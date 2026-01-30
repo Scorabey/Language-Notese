@@ -2,9 +2,10 @@ import { NotesContext } from '@/shared/model/context/NotesContext'
 import { Item } from '@/shared/ui/Item/Item'
 import { useContext, useState } from 'react'
 import 'swiper/css'
+import './Scrollbar.scss'
 import { Controller, FreeMode, Mousewheel, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import './Wrapper.scss'
+import styles from './Wrapper.module.scss'
 
 export const Wrapper = () => {
   const { notes, deleteNote, toggleRename, activeEdit, filteredNotes } =
@@ -36,9 +37,9 @@ export const Wrapper = () => {
 
   return (
     <>
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {notes.length === 0 ? (
-          <span className="is-Empty">Empty list</span>
+          <span className={styles.isEmpty}>Empty list</span>
         ) : (
           <Swiper
             modules={[Controller, Mousewheel, FreeMode]}
@@ -47,7 +48,7 @@ export const Wrapper = () => {
             {...swiperSettings}
           >
             {(filteredNotes ?? notes).map((note) => (
-              <SwiperSlide className="swiper-item" key={note.id}>
+              <SwiperSlide className={styles.swiperItem} key={note.id}>
                 <Item
                   deleteNote={() => deleteNote(note.id)}
                   toggle={() => toggleRename(note.id, 'Original')}
@@ -64,9 +65,9 @@ export const Wrapper = () => {
           </Swiper>
         )}
       </div>
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {notes.length === 0 ? (
-          <span className="is-Empty">Empty list</span>
+          <span className={styles.isEmpty}>Empty list</span>
         ) : (
           <Swiper
             modules={[Controller, Mousewheel, FreeMode]}
@@ -75,7 +76,7 @@ export const Wrapper = () => {
             {...swiperSettings}
           >
             {(filteredNotes ?? notes).map((note) => (
-              <SwiperSlide className="swiper-item" key={note.id}>
+              <SwiperSlide className={styles.swiperItem} key={note.id}>
                 <Item
                   isHidden={true}
                   deleteNote={() => deleteNote(note.id)}
@@ -98,9 +99,9 @@ export const Wrapper = () => {
           </Swiper>
         )}
       </div>
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {notes.length === 0 ? (
-          <span className="is-Empty">Empty list</span>
+          <span className={styles.isEmpty}>Empty list</span>
         ) : (
           <Swiper
             modules={[Controller, Scrollbar, Mousewheel, FreeMode]}
@@ -113,7 +114,7 @@ export const Wrapper = () => {
             {...swiperSettings}
           >
             {(filteredNotes ?? notes).map((note) => (
-              <SwiperSlide className="swiper-item" key={note.id}>
+              <SwiperSlide className={styles.swiperItem} key={note.id}>
                 <Item
                   deleteNote={() => deleteNote(note.id)}
                   toggle={() => toggleRename(note.id, 'Tag')}

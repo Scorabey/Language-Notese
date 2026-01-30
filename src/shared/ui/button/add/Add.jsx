@@ -1,6 +1,6 @@
 import { NotesContext } from '@/shared/model/context/NotesContext'
 import { memo, useContext } from 'react'
-import './Add.scss'
+import styles from './Add.module.scss'
 
 export const Add = (props) => {
   const { placeholder, id, isDisabled, emptyNote, error, setError } = props
@@ -23,7 +23,7 @@ export const Add = (props) => {
   }
 
   return (
-    <form className="frame__input" onSubmit={onSubmit}>
+    <form className={styles.frameInput} onSubmit={onSubmit}>
       <input
         className={`${error ? 'is-invalid' : ''}`}
         type="text"
@@ -33,10 +33,10 @@ export const Add = (props) => {
         onChange={onInput}
         ref={newNotesInputRef}
       />
-      {error && <span className="frame__error">{error}</span>}
+      {error && <span className={styles.frameError}>{error}</span>}
       <button
         title="Add new note"
-        className="frame__add"
+        className={styles.frameAdd}
         type="submit"
         disabled={isDisabled}
       >

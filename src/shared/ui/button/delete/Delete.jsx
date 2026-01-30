@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import './Delete.scss'
+import styles from './Delete.module.scss'
 
 export const Delete = (props) => {
   const { isHidden, deleteNote } = props
@@ -7,7 +7,7 @@ export const Delete = (props) => {
   return (
     <button
       title="Delete note"
-      className={`item__delete ${isHidden ? 'hidden' : ''}`}
+      className={`${styles.itemDelete} ${isHidden ? 'hidden' : ''}`}
       onClick={deleteNote}
     >
       <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

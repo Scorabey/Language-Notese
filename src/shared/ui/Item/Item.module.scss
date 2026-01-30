@@ -1,6 +1,6 @@
 @use '@/shared/styles/variables.scss' as *;
 
-.wrapper__item {
+.wrapperItem {
   display: flex;
   flex-direction: row;
   padding-left: 8px;
@@ -31,7 +31,7 @@
     outline: none;
   }
 
-  .wrapper__item-frame {
+  .wrapperItemFrame {
     display: flex;
     justify-content: center;
     align-items: center;

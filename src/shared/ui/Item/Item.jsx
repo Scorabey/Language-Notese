@@ -2,7 +2,7 @@ import { NotesContext } from '@/shared/model/context/NotesContext'
 import { Delete } from '@/shared/ui/button/delete'
 import { Rename } from '@/shared/ui/button/rename'
 import { memo, useContext } from 'react'
-import './Item.scss'
+import styles from './Item.module.scss'
 import RouterLink from '@/pages/RouterLink'
 
 export const Item = (props) => {
@@ -16,7 +16,7 @@ export const Item = (props) => {
   }
 
   return (
-    <form className="wrapper__item wrapper__item-original" onSubmit={onSubmit}>
+    <form className={styles.wrapperItem} onSubmit={onSubmit}>
       {isActive ? (
         <input
           title="Input new title note"
@@ -34,7 +34,7 @@ export const Item = (props) => {
           </span>
         </RouterLink>
       )}
-      <div className="wrapper__item-frame">
+      <div className={styles.wrapperItemFrame}>
         <Rename toggle={toggle} isActive={isActive} />
         <Delete deleteNote={deleteNote} isHidden={isHidden} />
       </div>

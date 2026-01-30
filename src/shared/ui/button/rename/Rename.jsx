@@ -1,10 +1,10 @@
 import { memo } from 'react'
-import './Rename.scss'
+import styles from './Rename.module.scss'
 
 export const Rename = (props) => {
   const { toggle, isActive } = props
   return (
-    <button title="Rename note" className="item__rename" onClick={toggle}>
+    <button title="Rename note" className={styles.itemRename} onClick={toggle}>
       {isActive ? (
         <svg
           width="30"

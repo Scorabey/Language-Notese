@@ -1,7 +1,7 @@
 import { NotesContext } from '@/shared/model/context/NotesContext'
 import { Add } from '@/shared/ui/button/add'
 import { memo, useContext, useState } from 'react'
-import './Input.scss'
+import styles from './Input.module.scss'
 
 export const Input = (props) => {
   const { title, placeholder, id } = props
@@ -14,7 +14,7 @@ export const Input = (props) => {
   const isNoteEmpty = emptyNote.length === 0
 
   return (
-    <div className="frame__labelInput">
+    <div className={styles.frameLabelInput}>
       <label htmlFor={id}>{title}</label>
       <Add
         id={id}

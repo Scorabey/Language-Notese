@@ -1,0 +1,18 @@
+@use '@/shared/styles/variables.scss' as *;
+
+.swiper-scrollbar {
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  width: 5px;
+  height: 100%;
+  border-radius: 3px;
+  background-color: $Seccond-Border;
+}
+
+.swiper-scrollbar-drag {
+  background-color: $accent-Main;
+  padding: 2px;
+  width: 3px;
+  border-radius: 3px;
+}
