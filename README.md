@@ -13,6 +13,8 @@ The app allows users to quickly add new words, organize them into categories, an
 
 -React context API
 
+-React router
+
 -Vite
 
 -SCSS modules
