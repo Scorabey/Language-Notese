@@ -6,19 +6,16 @@ export const NotesProvider = (props) => {
   const { children } = props
 
   const [notes, setNotes] = useState([])
-
-  const newNotesInputRef = useRef(null)
-
   const [newNoteWord, setNewNoteWord] = useState('')
-
   const [isActive, setIsActive] = useState(false)
-
   const [activeEdit, setActiveEdit] = useState({
     id: null,
     field: null,
   })
-
   const [searchQuery, setSearchQuery] = useState('')
+  const [disapearingNoteId, setDisapearingNoteId] = useState(null)
+
+  const newNotesInputRef = useRef(null)
 
   useEffect(() => {
     newNotesInputRef.current.focus()
@@ -58,9 +55,16 @@ export const NotesProvider = (props) => {
     const isConfirmed = confirm('Are you sure delete this note?')
 
     if (isConfirmed) {
-      noteApi.Delete(noteId).then(() => {
-        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId))
-      })
+      noteApi.Delete(noteId)
+        .then(() => {
+          setDisapearingNoteId(noteId)
+          setTimeout(() => {
+            setNotes((prevNotes) => {
+              return prevNotes.filter((note) => note.id !== noteId)
+            })
+            setDisapearingNoteId(null)
+          }, 400)
+        })
     }
   }, [])
   const updateNote = useCallback((id, field, value) => {
@@ -103,6 +107,7 @@ export const NotesProvider = (props) => {
         setSearchQuery,
         newNoteWord,
         setNewNoteWord,
+        disapearingNoteId
       }}
     >
       {children}

@@ -9,14 +9,19 @@ export const Item = (props) => {
   const { deleteNote, isHidden, title, id, field, value, toggle, isActive } =
     props
 
-  const { updateNote } = useContext(NotesContext)
+  const { updateNote, disapearingNoteId } = useContext(NotesContext)
 
   const onSubmit = (event) => {
     event.preventDefault()
   }
 
   return (
-    <form className={styles.wrapperItem} onSubmit={onSubmit}>
+    <form 
+    className={`
+      ${styles.wrapperItem} 
+      ${(disapearingNoteId === id ? styles.isDisapearing : '')}
+      `} 
+    onSubmit={onSubmit}>
       {isActive ? (
         <input
           title="Input new title note"

@@ -1,21 +1,43 @@
 @use '@/shared/styles/variables.scss' as *;
-
 .wrapperItem {
   display: flex;
   flex-direction: row;
-  padding-left: 8px;
   align-items: center;
   justify-content: space-between;
+  height: 45px;
+  width: 300px;
+  padding-left: 8px;
   border: 1.2px solid $Seccond-Border;
   border-radius: 13px 3px 3px 13px;
-  height: 45px;
+  transition: all $Transition-Duration $Transition-Mode;
+  user-select: none;
+  
+  &.isDisapearing {
+    opacity: 0;
+    transform: translateY(-75%); // Используйте transform вместо translate
+    transition: 
+      opacity calc($Transition-Duration * 2) $Transition-Mode,
+      transform calc($Transition-Duration * 2) $Transition-Mode,
+      margin calc($Transition-Duration * 2) $Transition-Mode $Transition-Duration,
+      height calc($Transition-Duration * 2) $Transition-Mode $Transition-Duration;
+    pointer-events: none;
+    margin-top: -45px;
+    margin-bottom: -8px;
+    height: 0;
 
+
+    & ~ .wrapperItem {
+      translate: 0 calc((100% + 8px) * -1);
+      transition-delay: $Transition-Duration;
+      transition-duration: $Transition-Duration;
+    }
+  }
+  
   span {
     font-size: clamp(16px, 1.11vw, 12px);
-    max-width: 220px;
     overflow: hidden scroll;
   }
-
+  
   input {
     display: flex;
     width: 238px;
@@ -23,14 +45,14 @@
     box-sizing: border-box;
     background-color: transparent;
     border-radius: $Border-Radius;
-    padding: 12px 8px;
-    transition: all $Transition-Darution $Transition-Mode;
+    padding-left: 8px;
+    transition: all $Transition-Duration $Transition-Mode;
   }
-
+  
   input:focus {
     outline: none;
   }
-
+  
   .wrapperItemFrame {
     display: flex;
     justify-content: center;

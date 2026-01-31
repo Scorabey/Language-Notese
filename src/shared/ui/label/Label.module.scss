@@ -12,6 +12,6 @@
     display: flex;
     justify-content: center;
     font-size: clamp(32px, 2.22vw, 12px);
-    transition: all $Transition-Darution $Transition-Mode;
+    transition: all $Transition-Duration $Transition-Mode;
   }
 }

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     font-size: clamp(24px, 1.67vw, 16px);
-    transition: all $Transition-Darution $Transition-Mode;
+    transition: all $Transition-Duration $Transition-Mode;
   }
 
   .tableSearch {
