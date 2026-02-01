@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import noteApi from "../shared/api/notesAPI"
+import Details from "../widgets/details/details"
 
 const NotePage = (props) => {
     const { params } = props
@@ -32,10 +33,7 @@ const NotePage = (props) => {
     }
 
     return (
-        <div>
-            <h1>{note.Word}</h1>
-            <h1>{note.Translate}</h1>
-        </div>
+        <Details note={note} />
     )
 }
 

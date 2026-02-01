@@ -1,0 +1,37 @@
+@use '@/shared/styles/variables.scss' as *;
+@use '@/shared/styles/main';
+
+.container {
+  display: grid;
+  width: 1192px;
+  height: 800px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr;
+  padding: 32px 48px;
+  margin: 0 auto;
+  max-width: $Container-Width;
+  background-color: $BG-Dop;
+  border-radius: $Border-Radius;
+  border: 1.2px solid $Seccond-Border;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-size: 48px;
+    }
+  }
+
+  .main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $BG-Dop;
+    border-width: 1.2px;
+    border-radius: $Border-Radius;
+    border-style: solid;
+    border-color: $Seccond-Border;
+  }
+}
