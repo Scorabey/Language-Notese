@@ -13,19 +13,26 @@
   border-style: solid;
   border-color: $Seccond-Border;
 
-  .spanTitle {
-    font-size: 24px;
-  }
-  .description {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
   .frame {
     display: flex;
     flex-direction: column;
     gap: 12px;
     align-items: center;
     padding-top: 6px;
+  }
+  .frameDescription {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 12px;
+
+    .frameButton {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 8px;
+    }
   }
 }
