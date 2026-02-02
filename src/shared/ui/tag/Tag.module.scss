@@ -1,0 +1,17 @@
+@use '@/shared/styles/variables.scss' as *;
+
+.frameTag {
+    display: flex;
+    background-color: $BG-Dop;
+    border-radius: $Border-Radius;
+    border-width: $Border-Width;
+    border-style: solid;
+    border-color: $Seccond-Border;
+
+    .link {
+        padding: 16px;
+    }
+    span {
+        padding: 16px;
+    }
+}

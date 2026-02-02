@@ -1,0 +1,11 @@
+@use '@/shared/styles/variables.scss' as *;
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-size: 48px;
+    }
+}

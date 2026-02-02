@@ -1,5 +1,7 @@
 import { memo, useMemo } from "react"
 import styles from './Details.module.scss'
+import Title from "@/shared/ui/title/"
+import Main from "@/entities/details-main"
 
 export const Details = (props) => {
     const { note } = props
@@ -14,29 +16,11 @@ export const Details = (props) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.title}>
-                <h2>{note.Word}</h2>
-                <h2>{note.Translate ? note.Translate : 'Empty Translate!'}</h2>
-            </div>
-            <main className={styles.main}>
-                <span className={styles.spanTitle}>{note.Word} - <br/><span className={styles.description}>{note.Description}</span></span>
-                <div className={styles.frame}>
-                    <div className={styles.frameTag}>
-                        {note.Tag 
-                        ?
-                        <a
-                        className={styles.link}
-                        href={`https://www.google.com/search?q=What+is+${encodeURIComponent(tag)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                            {note.Tag}
-                        </a> 
-                        :
-                        <span>Empty tag</span>}
-                    </div>
-                </div>
-            </main>
+            <Title note={note} />
+            <Main 
+            note={note} 
+            tag={tag}
+            />
         </div>
     )
 }
