@@ -3,13 +3,45 @@
 .table {
   display: grid;
   max-width: 100%;
-  height: 542px;
-  gap: 6px;
+  height: 535px;
+  gap: 8px;
   background-color: $BG-Dop;
-  padding: 26px 12px;
+  padding: 12px 10px;
   border: 1.2px solid $Seccond-Border;
   border-radius: $Border-Radius;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 8fr;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .table {
+    height: 100%;
+    gap: 6px;
+    padding: 12px 10px;
+    grid-template-rows: 0.8fr 8fr;
+    overflow: hidden;
+  }
+}
+@media (max-width: 375px) {
+  .table {
+    height: 100%;
+    gap: 4px;
+    padding: 0px 0px;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: hidden;
+    border: 1.2px solid transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .table {
+    border-radius: 5px;
+  }
 }

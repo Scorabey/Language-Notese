@@ -14,3 +14,14 @@
   border-radius: $Border-Radius;
   border: 1.2px solid $Seccond-Border;
 }
+
+@media (max-width: 768px) {
+  .container {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    border-radius: 5px;
+  }
+}

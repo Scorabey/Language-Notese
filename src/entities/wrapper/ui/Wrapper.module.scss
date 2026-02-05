@@ -4,8 +4,9 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  padding: 12px 8px;
+  padding: 10px 8px;
   overflow: hidden;
   border: 1.2px solid $Seccond-Border;
   border-radius: $Border-Radius;
@@ -15,11 +16,34 @@
     left: 25%;
     top: 40%;
     color: $Seccond-Disabled;
-    font-size: 38px;
     user-select: none;
   }
 }
 
 .swiperItem {
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 375px) {
+  .wrapper {
+    gap: 4px;
+    padding: 6px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .wrapper {
+    border-radius: 5px;
+  }
 }

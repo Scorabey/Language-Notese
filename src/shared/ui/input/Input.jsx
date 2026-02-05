@@ -15,7 +15,7 @@ export const Input = (props) => {
 
   return (
     <div className={styles.frameLabelInput}>
-      <label htmlFor={id}>{title}</label>
+      <label htmlFor={id}><h3>{title}</h3></label>
       <Add
         id={id}
         placeholder={placeholder}

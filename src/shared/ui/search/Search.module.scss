@@ -3,15 +3,18 @@
 .tableSearchFrame {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: 1.2px solid $Seccond-Border;
   border-radius: $Border-Radius;
-  padding: 12px 8px;
+  padding: 10px 8px;
 
   .tableSearchLabel {
     display: flex;
     justify-content: center;
-    font-size: clamp(24px, 1.67vw, 16px);
+    align-items: center;
+    text-align: center;
     transition: all $Transition-Duration $Transition-Mode;
   }
 
@@ -26,5 +29,43 @@
   .tableSearch:focus {
     outline: none;
     border: 1.2px solid $Seccond-Active;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableSearchFrame {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+  form {
+
+    input {
+      width: 100%;
+      height: 42px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .tableSearchFrame {
+    gap: 4px;
+    padding: 6px 8px;
+  }
+  form {
+
+    input {
+      width: 100%;
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tableSearchFrame {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .tableSearchFrame {
+    border-radius: 5px;
   }
 }

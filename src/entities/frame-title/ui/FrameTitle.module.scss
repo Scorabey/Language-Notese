@@ -3,9 +3,16 @@
 .frame {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+}
 
-  .frameTitle {
-    font-size: clamp(48px, 3.33vw, 24px);
+@media (max-width: 768px) {
+  .frame {
+    gap: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .frame {
+    gap: 8px;
   }
 }

@@ -16,7 +16,7 @@ export const Item = (props) => {
   }
 
   return (
-    <form 
+    <form
     className={`
       ${styles.wrapperItem} 
       ${(disapearingNoteId === id ? styles.isDisapearing : '')}

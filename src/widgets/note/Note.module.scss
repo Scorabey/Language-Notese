@@ -5,11 +5,43 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   padding: 32px 48px;
-  margin: 0 auto;
   max-width: $Container-Width;
   background-color: $BG-Dop;
   border-radius: $Border-Radius;
   border: 1.2px solid $Seccond-Border;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 24px;
+    max-width: $Container-Width;
+    background-color: $BG-Dop;
+    border: 1.2px solid transparent;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    gap: 8px;
+    padding: 4px 8px;
+    max-width: $Container-Width;
+    background-color: $BG-Dop;
+    border: 1.2px solid transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    border-radius: 5px;
+  }
 }

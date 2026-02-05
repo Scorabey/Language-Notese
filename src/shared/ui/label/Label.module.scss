@@ -4,14 +4,41 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: 1.2px solid $Seccond-Border;
   border-radius: $Border-Radius;
-  padding: 12px 8px;
+  padding: 10px 8px;
 
   .tableTitle {
     display: flex;
     justify-content: center;
-    font-size: clamp(32px, 2.22vw, 12px);
+    align-items: center;
+    text-align: center;
     transition: all $Transition-Duration $Transition-Mode;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableSearchLabel {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 375px) {
+  .tableSearchLabel {
+    gap: 4px;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableSearchLabel {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .tableSearchLabel {
+    border-radius: 5px;
   }
 }

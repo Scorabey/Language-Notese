@@ -18,12 +18,13 @@ body {
   align-items: center;
   height: 100%;
   margin: 0;
-  padding: 0;
 }
 
 body {
   @include Literata;
 
+  justify-content: center;
+  align-items: center;
   background-color: $BG-Main;
   color: $Seccond-Dop-Text;
 }
@@ -47,6 +48,22 @@ input {
   @include Literata(500);
 
   color: $Seccond-Main-Text;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 32px;
+}
+h4, span, label, ::placeholder, :focus {
+  font-size: 16px;
+}
+a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 ::placeholder {
@@ -81,8 +98,8 @@ button {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 45px;
-  height: 45px;
+  width: clamp(45px, 3.13vw, 24px);
+  height: clamp(45px, 3.13vw, 24px);
   background-color: $BG-Dop;
   padding: 10px;
   border-radius: 3px;
@@ -101,4 +118,33 @@ button:active {
     rgb(242 139 36 / 100%) 0%,
     rgb(191 110 29 / 100%) 100%
   );
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4, span, label, ::placeholder, :focus {
+    font-size: 12px;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: $BG-Dop;
+  }
+}
+@media (max-width: 375px) {
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  h4, span, label, ::placeholder, :focus {
+    font-size: 6px;
+  }
 }

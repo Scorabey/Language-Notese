@@ -15,3 +15,14 @@
         padding: 16px;
     }
 }
+
+@media (max-width: 768px) {
+  .frameTag {
+    border-radius: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .frameTag {
+    border-radius: 5px;
+  }
+}

@@ -17,3 +17,13 @@
   width: 3px;
   border-radius: 3px;
 }
+
+@media (max-width: 768px) {
+  .swiper-scrollbar {
+    display: none;
+  }
+
+  .swiper-scrollbar-drag {
+    display: none;
+  }
+}
