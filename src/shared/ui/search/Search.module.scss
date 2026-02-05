@@ -36,36 +36,13 @@
   .tableSearchFrame {
     gap: 8px;
     padding: 8px 10px;
-  }
-  form {
-
-    input {
-      width: 100%;
-      height: 42px;
-    }
-  }
-}
-@media (max-width: 375px) {
-  .tableSearchFrame {
-    gap: 4px;
-    padding: 6px 8px;
-  }
-  form {
-
-    input {
-      width: 100%;
-      height: 24px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .tableSearchFrame {
     border-radius: 9px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 580px) {
   .tableSearchFrame {
+    gap: 4px;
+    padding: 6px 8px;
     border-radius: 5px;
   }
 }
