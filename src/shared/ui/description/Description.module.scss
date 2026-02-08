@@ -1,12 +1,11 @@
 @use '@/shared/styles/variables.scss' as *;
 
 section {
-
     textarea {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        min-width: 580px;
+        min-width: 100%;
         padding: 10px 8px;
         background-color: transparent;
         color: $Seccond-Main-Text;
@@ -23,7 +22,6 @@ section {
     }
 
     p {
-        display: flex;
-        min-width: 580px;
+        min-width: 100%;
     }
 }

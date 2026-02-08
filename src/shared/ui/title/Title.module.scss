@@ -7,6 +7,18 @@ justify-content: space-between;
 width: 100%;
 }
 
+@media (max-width: 830px) {
+    .title {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        flex-direction: row;
+    }
+}
+
 @media (max-width: 375px) {
     .title {
         flex-direction: column;

@@ -13,9 +13,8 @@
 
 html,
 body {
-  display: flex;
   padding-top: 40px;
-  justify-content: center;
+  margin: 0 auto;
   height: 100%;
   width: 100%;
 }
@@ -132,9 +131,7 @@ button:active {
     font-size: 12px;
   }
   body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    margin: 0 auto;
     background-color: $BG-Dop;
     padding-top: 0px;
   }
