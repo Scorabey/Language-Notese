@@ -1,0 +1,16 @@
+@use '@/shared/styles/variables.scss' as *;
+
+.tags {
+    display: flex;
+    padding: 10px 8px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-decoration: none;
+    list-style: none;
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+}

@@ -33,6 +33,19 @@ const noteApi = {
       body: JSON.stringify(field),
     })
   },
+  saveDescription: async (id, description) => {
+    const response = await fetch(`${URL}/${id}`, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify({Description: description})
+    })
+
+    if(!response.ok) {
+      throw new Error('Failed save description!')
+    }
+
+    return response.json()
+  }
 }
 
 export default noteApi

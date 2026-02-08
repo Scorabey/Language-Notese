@@ -10,7 +10,7 @@ export const Input = (props) => {
 
   const [error, setError] = useState('')
 
-  const emptyNote = newNoteWord.trim()
+  const emptyNote = newNoteWord?.trim()
   const isNoteEmpty = emptyNote.length === 0
 
   return (

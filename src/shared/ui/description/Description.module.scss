@@ -1,4 +1,29 @@
 @use '@/shared/styles/variables.scss' as *;
-.descriptionText {
-    font-weight: 500;
+
+section {
+
+    textarea {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-width: 580px;
+        padding: 10px 8px;
+        background-color: transparent;
+        color: $Seccond-Main-Text;
+        border-radius: 3px;
+        resize: none;
+        overflow-y: hidden;
+        min-height: 40px;
+        max-height: 985px;
+        box-sizing: border-box;
+        }
+    textarea:focus {
+        outline: none;
+        border: 1.2px solid $Seccond-Active;
+    }
+
+    p {
+        display: flex;
+        min-width: 580px;
+    }
 }

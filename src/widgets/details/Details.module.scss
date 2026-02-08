@@ -2,26 +2,46 @@
 @use '@/shared/styles/main';
 
 .container {
-  display: grid;
-  width: 1192px;
-  height: 800px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 5fr;
+  display: flex;
+  flex-direction: column;
   padding: 32px 48px;
-  margin: 0 auto;
-  max-width: $Container-Width;
   background-color: $BG-Dop;
   border-radius: $Border-Radius;
   border: 1.2px solid $Seccond-Border;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.main {
+  display: grid;
+  gap: 12px;
+  padding: 12px 10px;
+  grid-template-columns: 8fr 1fr;
+  grid-template-rows: 1fr;
+  border-radius: 13px;
+  border-style: solid;
+  border-width: $Border-Width;
+  border-color: $Seccond-Border;
 }
 
 @media (max-width: 768px) {
   .container {
+    max-width: 100%;
+    padding: 12px 24px;
     border-radius: 9px;
+    border-color: transparent;
+    margin-top: -40px;
+  }
+  .main {
+   border-radius: 9px; 
   }
 }
 @media (max-width: 580px) {
   .container {
+    width: 100%;
     border-radius: 5px;
+    padding: 10px 8px;
+  }
+  .main {
+    border-radius: 5px; 
   }
 }

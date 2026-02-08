@@ -1,28 +1,38 @@
-import { memo, useMemo } from "react"
+import { useState } from "react"
 import styles from './Details.module.scss'
-import Title from "@/shared/ui/title/"
-import Main from "@/entities/details-main"
+import Title from "@/shared/ui/title/Title"
+import Description from "@/shared/ui/description/Description"
+import Tags from "../../shared/ui/tags/Tags"
 
-export const Details = (props) => {
-    const { note } = props
+export const Details = ({ note }) => {
 
-    const tag = useMemo(() => {
-        if(!note?.Tag) return ''
+    const [isEditing, setIsEditing] = useState(false)
 
-        return note.Tag.startsWith('#') 
-        ? note.Tag.slice(1) 
-        : note.Tag
-    }, [note.Tag])
+    const save = () => {
+        setIsEditing(false)
+    }
+
+    const Tag = note.Tag?.trim() || 'Tag'
+
+    const URL = `https://www.google.com/search?q=${encodeURIComponent(Tag)}`
 
     return (
         <div className={styles.container}>
             <Title note={note} />
-            <Main 
-            note={note} 
-            tag={tag}
-            />
+            <main className={styles.main}>
+                <Description 
+                isEditing={isEditing}
+                setIsEditing={setIsEditing}
+                save={save}
+                note={note}
+                />
+                <Tags 
+                Tag={Tag}
+                URL={URL}
+                />
+            </main>
         </div>
     )
 }
 
-export default memo(Details)
+export default Details

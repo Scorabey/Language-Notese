@@ -1,7 +1,15 @@
 @use '@/shared/styles/variables.scss' as *;
 
 .title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+}
+
+@media (max-width: 375px) {
+    .title {
+        flex-direction: column;
+        gap: 8px;
+    }
 }

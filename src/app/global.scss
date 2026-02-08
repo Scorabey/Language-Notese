@@ -14,17 +14,15 @@
 html,
 body {
   display: flex;
+  padding-top: 40px;
   justify-content: center;
-  align-items: center;
   height: 100%;
-  margin: 0;
+  width: 100%;
 }
 
 body {
   @include Literata;
 
-  justify-content: center;
-  align-items: center;
   background-color: $BG-Main;
   color: $Seccond-Dop-Text;
 }
@@ -55,7 +53,7 @@ h2 {
 h3 {
   font-size: 32px;
 }
-h4, span, label, ::placeholder, :focus {
+h4, span, label, p, a, textarea, ::placeholder, :focus {
   font-size: 16px;
 }
 a {
@@ -64,6 +62,9 @@ a {
   height: 100%;
   justify-content: flex-start;
   align-items: center;
+}
+p {
+  overflow-wrap: anywhere;
 }
 
 ::placeholder {
@@ -127,7 +128,7 @@ button:active {
   h3 {
     font-size: 24px;
   }
-  h4, span, label, ::placeholder, :focus {
+  h4, span, label, p, a, textarea, ::placeholder, :focus {
     font-size: 12px;
   }
   body {
@@ -135,6 +136,7 @@ button:active {
     justify-content: center;
     align-items: flex-start;
     background-color: $BG-Dop;
+    padding-top: 0px;
   }
 }
 @media (max-width: 580px) {
@@ -144,7 +146,7 @@ button:active {
   h3 {
     font-size: 14px;
   }
-  h4, span, label, ::placeholder, :focus {
+  h4, span, label, p, a, textarea, ::placeholder, :focus {
     font-size: 6px;
   }
 }

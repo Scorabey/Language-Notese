@@ -15,7 +15,7 @@ export const Add = (props) => {
 
   const onInput = (event) => {
     const value = event.target.value
-    const clearValue = value.trim()
+    const clearValue = value?.trim()
     const hasOnlySpaces = value.length > 0 && clearValue.length === 0
 
     setNewNoteWord(value)

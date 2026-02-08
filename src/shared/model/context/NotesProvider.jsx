@@ -40,6 +40,7 @@ export const NotesProvider = (props) => {
         Word: newNoteWord,
         Translate: '',
         Tag: '',
+        Description: ''
       }
 
       noteApi.Add(newNotes).then((addedNote) => {

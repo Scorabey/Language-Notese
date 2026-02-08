@@ -35,7 +35,7 @@ export const Item = (props) => {
       ) : (
         <RouterLink to={`/notes/${id}`} aria-label='Note details page'>
           <span onDoubleClick={toggle}>
-            {value.trim() === '' ? title : value}
+            {value?.trim() === '' ? title : value}
           </span>
         </RouterLink>
       )}
