@@ -3,9 +3,14 @@ import styles from './Details.module.scss'
 import Title from "@/shared/ui/title/Title"
 import Description from "@/shared/ui/description/Description"
 import Tags from "@/shared/ui/tags/Tags"
-import noteApi from "../../shared/api/notesAPI"
+import noteApi from "@/shared/api/notesAPI"
+import useResize from "@/shared/model/hooks/useResize"
 
 export const Details = ({ note }) => {
+
+    const { width, height } = useResize()
+
+    console.log(`Width: ${width}, Height: ${height}`)
 
     const [isEditing, setIsEditing] = useState(false)
     const [textareaValue, setTextareaValue] = useState(null)
