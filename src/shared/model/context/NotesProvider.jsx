@@ -108,7 +108,7 @@ export const NotesProvider = (props) => {
         setSearchQuery,
         newNoteWord,
         setNewNoteWord,
-        disapearingNoteId
+        disapearingNoteId,
       }}
     >
       {children}

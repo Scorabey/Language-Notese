@@ -1,0 +1,48 @@
+@use '@/shared/styles/variables.scss' as *;
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    .scrollTop {
+        position: fixed;
+        top: -130px;
+        background-color: $BG-Main;
+        height: 200px;
+        width: 100%;
+        border-radius: 50%;
+        opacity: 0.4;
+        box-shadow: $BG-Main 10px 20px 30px;
+        transition: all $Transition-Duration $Transition-Mode;
+    }
+    .scrollBottom {
+        position: fixed;
+        bottom: -130px;
+        background-color: $BG-Main;
+        height: 200px;
+        width: 100%;
+        border-radius: 50%;
+        opacity: 0.4;
+        box-shadow: $BG-Main -10px -20px 30px;
+        transition: all $Transition-Duration $Transition-Mode;
+    }
+    .scrollTop:hover {
+        opacity: 0.6;
+        box-shadow: $BG-Main 10px 40px 30px;
+    }
+    .scrollBottom:hover {
+        opacity: 0.6;
+        box-shadow: $BG-Main -10px -40px 30px;
+    }
+    .scrollTop:active {
+        outline: none;
+        border: none;
+        background: $BG-Main;
+    }
+    .scrollBottom:active {
+        outline: none;
+        border: none;
+        background: $BG-Main;
+    }
+}

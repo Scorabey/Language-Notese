@@ -5,12 +5,10 @@ import Description from "@/shared/ui/description/Description"
 import Tags from "@/shared/ui/tags/Tags"
 import noteApi from "@/shared/api/notesAPI"
 import useResize from "@/shared/model/hooks/useResize"
+import useScroll from "@/shared/model/hooks/useScroll"
+import FastScroll from "@/shared/ui/fastScroll/FastScroll"
 
 export const Details = ({ note }) => {
-
-    const { width, height } = useResize()
-
-    console.log(`Width: ${width}, Height: ${height}`)
 
     const [isEditing, setIsEditing] = useState(false)
     const [textareaValue, setTextareaValue] = useState(null)
@@ -23,7 +21,7 @@ export const Details = ({ note }) => {
         })
 
     }, [note.id])
-
+    
     const save = async () => {
         try {
             await noteApi.saveDescription(note.id, textareaValue)
@@ -47,6 +45,8 @@ export const Details = ({ note }) => {
     const URL = `https://www.google.com/search?q=${encodeURIComponent(Tag)}`
 
     return (
+        <>
+        <FastScroll />
         <div className={styles.container}>
             <Title note={note} />
             <main className={styles.main}>
@@ -65,7 +65,8 @@ export const Details = ({ note }) => {
                 URL={URL}
                 />
             </main>
-        </div>
+        </div>        
+        </>
     )
 }
 
