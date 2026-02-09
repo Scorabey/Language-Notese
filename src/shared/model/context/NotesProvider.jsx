@@ -18,7 +18,7 @@ export const NotesProvider = (props) => {
   const newNotesInputRef = useRef(null)
 
   useEffect(() => {
-    newNotesInputRef.current.focus()
+    newNotesInputRef.current?.focus()
 
     noteApi.getAll().then(setNotes)
   }, [])
@@ -47,7 +47,7 @@ export const NotesProvider = (props) => {
         setNotes((prev) => [...prev, addedNote])
         setNewNoteWord('')
         setSearchQuery('')
-        newNotesInputRef.current.focus()
+        newNotesInputRef.current?.focus()
       })
     },
     [newNoteWord],

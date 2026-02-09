@@ -11,14 +11,15 @@ section {
         color: $Seccond-Main-Text;
         border-radius: 3px;
         resize: none;
-        overflow-y: hidden;
+        overflow: hidden;
         min-height: 40px;
         max-height: 985px;
         box-sizing: border-box;
+        field-sizing: content;
         }
     textarea:focus {
         outline: none;
-        border: 1.2px solid $Seccond-Active;
+        border: 1.2px solid transparent;
     }
 
     p {

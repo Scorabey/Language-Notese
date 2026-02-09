@@ -29,7 +29,7 @@ const NotePage = (props) => {
     }
 
     if(hasError) {
-        return <div><h1>Task not found!</h1></div>
+        return <div><h1>Note not found!</h1></div>
     }
 
     return (

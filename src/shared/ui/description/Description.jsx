@@ -2,7 +2,16 @@ import { memo } from 'react'
 import styles from './Description.module.scss'
 
 export const Description = (props) => {
-    const { note, isEditing, setIsEditing, save } = props
+    const {
+        note, 
+        isEditing, 
+        setIsEditing, 
+        save, 
+        AutoResize,
+        textAreaRef,
+        textareaValue,
+        setTextareaValue
+    } = props
 
     return (
         <section
@@ -13,12 +22,18 @@ export const Description = (props) => {
             {isEditing
             ? (
             <textarea 
+            ref={textAreaRef}
             placeholder="Type text..." 
+            onChange={(event) => {
+                setTextareaValue(event.target.value)
+                AutoResize()
+            }}
+            onInput={AutoResize}
             onBlur={() => save()}
             autoFocus 
             />)
             : (
-            <p>{note.Description.length === 0 ? 'Double tap to change description!' : note.Description}</p>)}
+            <p>{textareaValue?.length === 0 ? 'Double tap to change description!' : textareaValue}</p>)}
         </section>
     )
 }

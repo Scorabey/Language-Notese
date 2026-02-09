@@ -37,14 +37,14 @@ const noteApi = {
     const response = await fetch(`${URL}/${id}`, {
       method: 'PATCH',
       headers,
-      body: JSON.stringify({Description: description})
-    })
-
-    if(!response.ok) {
-      throw new Error('Failed save description!')
+      body: JSON.stringify({ Description: description })
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    return response.json()
+    
+    return await response.json();
   }
 }
 
