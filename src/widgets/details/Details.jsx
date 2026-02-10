@@ -4,8 +4,6 @@ import Title from "@/shared/ui/title/Title"
 import Description from "@/shared/ui/description/Description"
 import Tags from "@/shared/ui/tags/Tags"
 import noteApi from "@/shared/api/notesAPI"
-import useResize from "@/shared/model/hooks/useResize"
-import useScroll from "@/shared/model/hooks/useScroll"
 import FastScroll from "@/shared/ui/fastScroll/FastScroll"
 
 export const Details = ({ note }) => {

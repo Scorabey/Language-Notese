@@ -13,11 +13,26 @@ const FastScroll = () => {
 
     const scrollPosition = scrollPosY > halfHeight
 
+    const scrollTo = {
+        Bottom: () => {
+            window.scrollTo({
+                top: height,
+                behavior: 'smooth'
+            })
+        },
+        Top: () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     return (
         <div className={styles.container}>
             {scrollPosition 
-            ? <button className={styles.scrollTop}></button> 
-            : <button className={styles.scrollBottom}></button>}
+            ? <button className={styles.scrollTop} onClick={scrollTo.Top}></button> 
+            : <button className={styles.scrollBottom} onClick={scrollTo.Bottom}></button>}
         </div>
     )
 }
