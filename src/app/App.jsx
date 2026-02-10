@@ -3,6 +3,7 @@ import NotesPage from '../pages/NotesPage'
 import NotePage from '../pages/NotePage'
 import './global.scss'
 import { NotesProvider } from '../shared/model/context/NotesProvider'
+import Footer from '../shared/ui/footer/Footer'
 
 export const App = () => {
   const routes = {
@@ -13,7 +14,7 @@ export const App = () => {
 
   return (
     <NotesProvider>
-      <Router routes={routes}/> 
+      <Router routes={routes}/>
     </NotesProvider>
   )
 }

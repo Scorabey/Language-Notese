@@ -1,0 +1,33 @@
+@use '@/shared/styles/variables.scss' as *;
+
+footer {
+    background-color: $BG-Dop;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    padding: 12px 30%;
+    flex-direction: column;
+    width: 100vw;
+
+    .footerLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+        }
+    }
+}
+
+.description, .openSource, .copyright {
+    margin: 0.5em 0;
+    color: $Seccond-Main-Text;
+}
