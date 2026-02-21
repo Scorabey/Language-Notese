@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import noteApi from "../shared/api/notesAPI"
+import noteApi from "../shared/api/notesAPI.js"
 import Details from "../widgets/details/"
 
 const NotePage = (props) => {
