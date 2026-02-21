@@ -9,7 +9,7 @@
   input {
     display: flex;
     width: 238px;
-    height: 40px;
+    min-height: 40px;
     box-sizing: border-box;
     background-color: $Seccond-Main;
     border-radius: $Border-Radius;

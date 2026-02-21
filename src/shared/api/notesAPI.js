@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3001/notes'
+const URL = 'http://192.168.31.234:3001/notes'
 
 const headers = {
   'Content-type': 'application/json',

@@ -20,8 +20,14 @@
   }
 }
 
+.swiper-wrapper {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
 .swiperItem {
   height: auto;
+  touch-action: pan-y;
 }
 
 @media (max-width: 768px) {
