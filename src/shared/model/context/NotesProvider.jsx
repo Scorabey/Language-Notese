@@ -1,4 +1,4 @@
-import noteApi from '@/shared/api/notesApi.js'
+import noteApi from '@/shared/api/notesAPI.js'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { NotesContext } from './NotesContext'
 
