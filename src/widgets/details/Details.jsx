@@ -3,7 +3,7 @@ import styles from './Details.module.scss'
 import Title from "@/shared/ui/title/"
 import Description from "@/shared/ui/description/"
 import Tags from "@/shared/ui/tags/"
-import noteApi from "@/shared/api/notesAPI"
+import noteApi from "@/shared/api/notesAPI.js"
 import FastScroll from "@/shared/ui/fastScroll/"
 import Footer from "@/shared/ui/footer/"
 
