@@ -1,6 +1,10 @@
 @use '../shared/styles/main';
 @use '../shared/styles/variables.scss' as *;
 
+#root {
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
