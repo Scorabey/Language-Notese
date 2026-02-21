@@ -127,13 +127,13 @@ button:active {
 
 @media (max-width: 768px) {
   h2 {
-    font-size: 32px;
+    font-size: 30px;
   }
   h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
   h4, span, label, p, a, textarea, ::placeholder, :focus {
-    font-size: 12px;
+    font-size: 10px;
   }
   body {
     margin: 0 auto;
@@ -143,12 +143,12 @@ button:active {
 }
 @media (max-width: 580px) {
   h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
   h3 {
-    font-size: 14px;
+    font-size: 12px;
   }
   h4, span, label, p, a, textarea, ::placeholder, :focus {
-    font-size: 6px;
+    font-size: 4px;
   }
 }
