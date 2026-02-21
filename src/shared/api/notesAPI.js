@@ -1,4 +1,4 @@
-const URL = import.meta.env.VITE_API_URL || 'http://192.168.31.234:3001/notes'
+const URL = import.meta.env.VITE_API_URL
 
 const headers = {
   'Content-type': 'application/json',
