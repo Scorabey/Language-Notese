@@ -6,7 +6,7 @@ const headers = {
 
 const noteApi = {
   getAll: () => {
-    return fetch(URL).then((response) => response.json())
+    return fetch(URL).then((response) => {return response.json()})
   },
 
   getById: (id) => {
