@@ -40,9 +40,12 @@
     width: 100%;
     height: auto;
   }
+
+  .wrapperInput {
+    width: 100% !important;
+  }
   
   input {
-    width: 100%;
     background-color: transparent;
     border-radius: $Border-Radius;
     transition: all $Transition-Duration $Transition-Mode;

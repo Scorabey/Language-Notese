@@ -24,13 +24,14 @@ export const Item = (props) => {
     onSubmit={onSubmit}>
       {isActive ? (
         <input
-          title="Input new title note"
-          value={value}
-          type="text"
-          id="rename"
-          placeholder="Rename..."
-          autoFocus
-          onChange={(event) => updateNote(id, field, event.target.value)}
+        className={styles.wrapperInput}
+        title="Input new title note"
+        value={value}
+        type="text"
+        id="rename"
+        placeholder="Rename..."
+        autoFocus
+        onChange={(event) => updateNote(id, field, event.target.value)}
         ></input>
       ) : (
         <RouterLink to={`/notes/${id}`} aria-label='Note details page'>
