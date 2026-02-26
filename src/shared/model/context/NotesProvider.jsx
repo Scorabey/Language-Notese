@@ -1,4 +1,4 @@
-import noteApi from '@/shared/api/notesAPI.js'
+import noteApi from '@/shared/api/notesAPI'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { NotesContext } from './NotesContext'
 
@@ -32,8 +32,7 @@ export const NotesProvider = (props) => {
   const toggle = useCallback(() => {
     setIsActive((prev) => !prev)
   }, [])
-  const addItem = useCallback(
-    (checking) => {
+  const addItem = useCallback((checking) => {
       if (!checking) return
 
       const newNotes = {

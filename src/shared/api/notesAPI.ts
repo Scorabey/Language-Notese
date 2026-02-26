@@ -9,12 +9,12 @@ const noteApi = {
     return fetch(URL).then((response) => {return response.json()})
   },
 
-  getById: (id) => {
+  getById: (id: string) => {
     return fetch(`${URL}/${id}`)
       .then((response) => response.json())
   },
 
-  Add: (note) => {
+  Add: (note: object) => {
     return fetch(URL, {
       method: 'POST',
       headers,
@@ -22,18 +22,18 @@ const noteApi = {
     }).then((response) => response.json())
   },
 
-  Delete: (id) => {
+  Delete: (id: string) => {
     return fetch(`${URL}/${id}`, { method: 'DELETE' })
   },
 
-  ToggleComplete: (id, field) => {
+  ToggleComplete: (id: string, field: string) => {
     return fetch(`${URL}/${id}`, {
       method: 'PATCH',
       headers,
       body: JSON.stringify(field),
     })
   },
-  saveDescription: async (id, description) => {
+  saveDescription: async (id: string, description: string) => {
     const response = await fetch(`${URL}/${id}`, {
       method: 'PATCH',
       headers,
