@@ -1,9 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './app'
-import Footer from './shared/ui/footer/Footer'
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root') as HTMLAreaElement).render(
   <StrictMode>
     <App />
   </StrictMode>,
