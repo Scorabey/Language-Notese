@@ -2,8 +2,7 @@ import { NotesContext } from '@/shared/model/context/NotesContext'
 import { memo, useContext } from 'react'
 import styles from './Search.module.scss'
 
-export const Search = (props) => {
-  const { title, type } = props
+export const Search = ({title, type}) => {
 
   const { searchQuery, setSearchQuery } = useContext(NotesContext)
 

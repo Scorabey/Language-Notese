@@ -1,7 +1,12 @@
 import { memo } from 'react'
 import styles from './Tags.module.scss'
 
-export const Tags = ({ Tag, URL }) => {
+interface Props {
+    Tag: string;
+    URL: string;
+}
+
+export const Tags = ({ Tag, URL }: Props) => {
 
     return (
         <ul className={styles.tags}>

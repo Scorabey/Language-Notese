@@ -1,12 +1,15 @@
 import { memo } from 'react'
 import styles from './Tag.module.scss'
 
-export const Tag = (props) => {
-    const { note, tag } = props
+interface Props {
+    tag: string;
+}
+
+export const Tag = ({tag}: Props) => {
 
     return (
         <div className={styles.frameTag}>
-            {note.Tag
+            {tag
             ?
             <a
             className={styles.link}
@@ -14,7 +17,7 @@ export const Tag = (props) => {
             target="_blank"
             rel="noopener noreferrer"
             >
-                {note.Tag}
+                {tag}
             </a> 
             :
             <span>Empty tag</span>}

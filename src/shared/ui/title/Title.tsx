@@ -1,7 +1,12 @@
 import { memo } from 'react'
 import styles from './Title.module.scss'
+import { Note } from '@/shared/types/NoteType';
 
-export const Title = ({ note }) => {
+interface Props {
+    note: Note;
+}
+
+export const Title = ({ note }: Props) => {
 
     return (
         <div className={styles.title}>

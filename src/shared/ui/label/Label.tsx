@@ -1,7 +1,10 @@
 import styles from './Label.module.scss'
 
-export const Label = (props) => {
-  const { title } = props
+interface Props {
+  title: string;
+}
+
+export const Label = ({ title }: Props) => {
 
   return (
     <div className={styles.tableSearchLabel}>

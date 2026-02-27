@@ -3,8 +3,7 @@ import { Add } from '@/shared/ui/button/add'
 import { memo, useContext, useState } from 'react'
 import styles from './Input.module.scss'
 
-export const Input = (props) => {
-  const { title, placeholder, id } = props
+export const Input = ({ title, placeholder, id }) => {
 
   const { newNoteWord } = useContext(NotesContext)
 

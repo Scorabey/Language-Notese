@@ -3,7 +3,7 @@ import styles from './Description.module.scss'
 
 export const Description = (props) => {
     const {
-        note, 
+        note,
         isEditing, 
         setIsEditing, 
         save, 

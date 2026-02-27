@@ -5,9 +5,7 @@ import { memo, useContext } from 'react'
 import styles from './Item.module.scss'
 import RouterLink from '@/pages/RouterLink'
 
-export const Item = (props) => {
-  const { deleteNote, isHidden, title, id, field, value, toggle, isActive } =
-    props
+export const Item = ({ deleteNote, isHidden, title, id, field, value, toggle, isActive }) => {
 
   const { updateNote, disapearingNoteId } = useContext(NotesContext)
 
